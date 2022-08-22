@@ -1,0 +1,17 @@
+<view class="t-c m-t80" wx:if="{{!userInfo}}">
+  <image class="icon-l" bindtap="bindSubject" src="/images/nohead.png" />
+  <view>未绑定学号</view>
+</view>
+<view class="t-c m-t80" wx:if="{{userInfo}}" bindtap="onloadImg">
+  <image  wx:if="{{userInfo.user && userInfo.user.avatar}}" class="icon-l b-r50" src="{{userInfo.user.avatar}}" />
+  <image wx:else class="icon-l" src="/images/nohead.png" />
+  <view>更换头像</view>
+</view>
+<text class="title-t">设置</text>
+<view class="container">
+  <van-cell title="关于课表" is-link link-type="navigateTo" border="{{false}}" url="/pages/index/index" />
+  <van-cell title="反馈" is-link link-type="navigateTo" border="{{false}}" url="/pages/index/index" />
+</view>
+
+<view class="btn" catchtap="loginout">退出登录</view>
+

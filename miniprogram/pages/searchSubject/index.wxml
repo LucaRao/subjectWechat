@@ -1,0 +1,25 @@
+<view class="t-c m-t80">
+  <image class="icon-l" bindtap="bindSubject" src="/images/menu-subject.png" />
+  <view>班级课表</view>
+</view>
+<view class="container m-t40">
+  <van-cell-group>
+    <view class="pick">
+      <picker bindchange="bindSchoolChange" value="{{schoolIndex}}" range="{{schoolData}}" range-key="schoolName">
+        <view class="picker">
+           学校    <text class="m-l60">{{schoolData[schoolIndex].schoolName}}</text>
+        </view>
+      </picker>
+    </view>
+    <view class="pick">
+      <picker bindchange="bindDepartmentChange" value="{{departmentIndex}}" range="{{departmentData}}"  range-key="departmentName">
+        <view class="picker">
+          学院    <text class="m-l60">{{departmentData[departmentIndex].departmentName}}</text> 
+        </view>
+      </picker>
+    </view>
+    <van-field value="{{ studentId }}" type="text" label="请输入学号" bind:change="onstudentIdChange" placeholder="例如 20222202" />
+  </van-cell-group>
+</view>
+
+<view class="btn" catchtap="findTodaySubject">查看当日课表</view>

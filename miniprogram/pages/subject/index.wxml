@@ -1,0 +1,22 @@
+<van-tabs active="{{ active }}" bind:change="onChange" color="#0b7aec">
+  <van-tab wx:for="{{weekdays}}" wx:key='index' title="{{item.name}}">
+    <view class="class-box container" wx:for="{{todysubjectData}}">
+      <view class="on-t">{{item.subject_time[0].time}}</view>
+      <view class="row-box flex-a-i">
+        <image class="icon" src="/images/icon-subject.png" />
+        <view class="m-l20">{{item.subject.subjectName}}</view>
+      </view>
+      <view class="row-box flex-a-i">
+        <image class="icon" src="/images/icon-adress.png" />
+        <view class="m-l20">{{item.subject.adress}}</view>
+      </view>
+      <view class="row-box flex-a-i">
+        <image class="icon" src="/images/icon-teacher.png" />
+        <view class="m-l20">{{item.subject.teacherName}}</view>
+      </view>
+    </view>
+    <view class="class-box container" wx:if="{{todysubjectData.length == 0}}">
+    暂无课表
+    </view>
+  </van-tab>
+</van-tabs>

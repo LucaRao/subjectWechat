@@ -1,0 +1,15 @@
+
+<view class="t-c m-t80">
+  <image class="icon-l" bindtap="bindSubject" src="/images/icon-sys.png" />
+  <view>绑定学号并登录</view>
+</view>
+<view class="container m-t40">
+  <van-cell-group>
+    <van-field value="{{ email }}" bindinput='getEmailValue' type="text" label="邮箱" placeholder="请输入邮箱" />
+    <van-field value="{{ password }}" bindinput='getPasswordValue' type="password" label="密码" placeholder="请输入密码" />
+    <van-field value="{{ studentId }}" bindinput='getStudentIdValue' type="text" label="学号" placeholder="例如 202238476" />
+  </van-cell-group>
+</view>
+
+<view class="btn" catchtap="findTodaySubject" data-type="signIn">登 录</view>
+<view class="btn m-t50" catchtap="findTodaySubject" data-type="signUp">注册并绑定学号</view>
