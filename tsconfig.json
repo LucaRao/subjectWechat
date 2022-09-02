@@ -27,8 +27,9 @@
     "lib": ["ES6"]
   },
   "include": [
-    "./**/*.ts"
-  ],
+    "./**/*.ts",
+    "./**/*.js"
+, "miniprogram/supabase-wechat-stable/src/lib2/url.js", "miniprogram/supabase-wechat-stable/src/lib2/internal/url.js"  ],
   "exclude": [
     "node_modules"
   ]

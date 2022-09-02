@@ -5,7 +5,7 @@
 <text class="title-t">今日课程</text>
 <view class="container">
   <text class="empoty-t t-d-u" bindtap="gologin" wx:if="{{!userInfo}}">请先绑定学号以显示今日课程</text>
-  <view wx:if="{{!todaySubjectData}}">今日无课</view>
+  <view wx:if="{{todaySubjectData.length == 0 && userInfo}}">今日无课</view>
   <view wx:else>
     <view wx:for="{{todaySubjectData}}" class="sub-box">
     <view class="sub-item"><text>课程名称</text>：<text>{{item.subject.subjectName}}</text></view>

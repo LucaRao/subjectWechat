@@ -79,9 +79,9 @@ Page({
     `).eq("studentId", this.data.studentId).eq("schoolId", this.data.schoolId).eq("departmentId", this.data.departmentId);
     if (error) {
       wx.showToast({
-        title: error.data.message,
-        icon: 'error',
-        duration: 2000
+        title: error.data.msg || '',
+        icon: 'none',
+        duration: 3000
       });
     } else {
       data.data.forEach(async (item, index) => {
@@ -93,9 +93,9 @@ Page({
         `).eq("subjectId", item.subject.id).order('time');
           if (error) {
             wx.showToast({
-              title: error.data.message,
-              icon: 'error',
-              duration: 2000
+              title: error.data.msg || '',
+              icon: 'none',
+              duration: 3000
             });
           } else {
             data.data.forEach(el => {

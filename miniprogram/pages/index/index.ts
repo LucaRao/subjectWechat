@@ -47,11 +47,13 @@ Page({
 
   },
   async onShow() {
-    this.analysisUrl(this.data.url)
     this.setData({
       userInfo: wx.getStorageSync('userInfo') ? wx.getStorageSync('userInfo') : null
     });
-    await this.getTodaySub()
+    if(this.data.userInfo){
+      await this.getTodaySub()
+    }
+   
   },
   //获取学生今天的课表
   async getTodaySub() {
@@ -73,9 +75,9 @@ Page({
     `).eq("studentId", studentId);
     if (error) {
       wx.showToast({
-        title: error.data.message,
-        icon: 'error',
-        duration: 2000
+        title: error.data.msg || '',
+        icon: 'none',
+        duration: 3000
       });
     } else {
       data.data.forEach(async (item, index) => {
@@ -87,9 +89,9 @@ Page({
         `).eq("subjectId", item.subject.id).order('time');
           if (error) {
             wx.showToast({
-              title: error.data.message,
-              icon: 'error',
-              duration: 2000
+              title: error.data.msg || '',
+              icon: 'none',
+              duration: 3000
             });
           } else {
             data.data.forEach(el => {
@@ -133,22 +135,22 @@ Page({
   bindInfo() {
     wx.showToast({
       title: "尽请期待",
-      icon: 'error',
-      duration: 2000
+      icon: 'none',
+      duration: 3000
     });
   },
   bindFree() {
     wx.showToast({
       title: "尽请期待",
-      icon: 'error',
-      duration: 2000
+      icon: 'none',
+      duration: 3000
     });
   },
   bindSys() {
     wx.showToast({
       title: "尽请期待",
-      icon: 'error',
-      duration: 2000
+      icon: 'none',
+      duration: 3000
     });
   },
 

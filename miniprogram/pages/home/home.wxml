@@ -13,5 +13,5 @@
   <van-cell title="反馈" is-link link-type="navigateTo" border="{{false}}" url="/pages/index/index" />
 </view>
 
-<view class="btn" catchtap="loginout">退出登录</view>
+<view class="btn" catchtap="loginout">清除缓存</view>
 

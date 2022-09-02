@@ -36,9 +36,9 @@ Page({
     const { data, error } = await supabase.from('school').select();
     if (error) {
       wx.showToast({
-        title: error.data.message,
-        icon: 'error',
-        duration: 2000
+        title: error.data.msg || '',
+        icon: 'none',
+        duration: 3000
       });
     } else if (data) {
       this.setData({
@@ -50,9 +50,9 @@ Page({
     const { data, error } = await supabase.from('department').select();
     if (error) {
       wx.showToast({
-        title: error.data.message,
-        icon: 'error',
-        duration: 2000
+        title: error.data.msg || '',
+        icon: 'none',
+        duration: 3000
       });
     } else if (data) {
       this.setData({

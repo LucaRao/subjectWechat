@@ -9,7 +9,9 @@
   "license": "ISC",
   "dependencies": {
     "@vant/weapp": "^1.10.4",
-    "supabase-wechat-stable": "0.0.3"
+    "is-urlsearchparams": "^1.0.2",
+    "supabase-minichat": "^0.1.2",
+    "supabase-wechat-stable": "0.1.6"
   },
   "devDependencies": {
     "miniprogram-api-typings": "^3.5.0"
